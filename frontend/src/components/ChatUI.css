@@ -1,0 +1,187 @@
+/* Chat Container with Colorful Shadow */
+.chat-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(255, 0, 0, 0.15),
+                0 0 30px rgba(0, 255, 0, 0.15),
+                0 0 40px rgba(0, 0, 255, 0.15),
+                0 0 50px rgba(255, 255, 0, 0.15),
+                0 0 60px rgba(255, 0, 255, 0.15);
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Gradient animated title */
+  .chat-title {
+    text-align: center;
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff00ff, #00c6ff);
+    background-size: 400% 400%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: gradientAnimation 4s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Chat box (scrollable messages area) */
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 16px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: #ffffff;
+  }
+  
+  /* Individual messages */
+  .message {
+    padding: 12px 16px;
+    border-radius: 10px;
+    max-width: 85%;
+    font-size: 16px;
+    line-height: 1.4;
+    animation: messageFadeIn 0.3s ease-in-out;
+  }
+  
+  /* User message */
+  .user-message {
+    background-color: #01147C;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+    border-radius: 16px 16px 0 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Bot message */
+  .bot-message {
+    background: linear-gradient(135deg, #2196f3, #64b5f6);
+    color: white;
+    align-self: flex-start;
+    text-align: left;
+    border-radius: 16px 16px 16px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Bot typing */
+  .loading-text {
+    font-style: italic;
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+    animation: loadingBlink 1s ease-in-out infinite;
+  }
+  
+  /* Input and send button section */
+  .input-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .input-field {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+  }
+  
+  .input-field:focus {
+    background-color: #fff;
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+  }
+  
+  /* Send button */
+  .send-button {
+    padding: 14px 22px;
+    font-size: 16px;
+    background-color: #01147C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #010e55;
+    transform: translateY(-1px);
+  }
+  
+  .send-button:active {
+    background-color: #010b4b;
+    transform: translateY(1px);
+  }
+  
+  /* ======= Animations ======= */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes loadingBlink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  
+  /* ======= RESPONSIVE ======= */
+  @media (max-width: 768px) {
+    .chat-container {
+      padding: 16px;
+      border-radius: 0;
+      box-shadow: none;
+      height: 100vh;
+      max-width: 100%;
+    }
+  
+    .chat-title {
+      font-size: 1.8rem;
+    }
+  
+    .chat-box {
+      height: 65vh;
+      padding: 12px;
+    }
+  
+    .input-box {
+      flex-direction: column;
+    }
+  
+    .input-field {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    .send-button {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  
